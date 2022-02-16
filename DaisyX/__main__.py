@@ -63,38 +63,37 @@ from DaisyX.modules.helper_funcs.misc import paginate_modules
 from DaisyX.modules.helper_funcs.readable_time import get_readable_time
 
 PM_START_TEXT = """
-HALLO SOBAT ! GUA,
-GUA HADIR UNTUK MEMBANTU ELU NGAB!.
-
-RAWAT GROUP ELU, BIAR ELU NYA KAGAK CAPEK!
+Salama!Waxaan Ahay Osmani ChatBot.
+Waxaan Ahay Bot Dhamestiran.
+Sidookle Waxaan Ahay Bot Wata Toyo Sare!
 
 """
 
 buttons = [
     [
-        InlineKeyboardButton(text="👮OWNER👮", url="https://t.me/kenkanasw"),
-        InlineKeyboardButton(text="💬GROUP💬", url="https://t.me/musikkugroup"),
+        InlineKeyboardButton(text="👮Malkilaha👮", url="https://t.me/ribajosmani"),
+        InlineKeyboardButton(text="💬GROUP💬", url="https://t.me/osmanigroupbot"),
     ],
     [
-        InlineKeyboardButton(text="❓ BANTUAN ❓", callback_data="help_back"),
-        InlineKeyboardButton(text="📣CHANNEL📣", url="https://t.me/musikkuchannel"),
+        InlineKeyboardButton(text="❓ Caawinaad ❓", callback_data="help_back"),
+        InlineKeyboardButton(text="📣CHANNEL📣", url="https://t.me/osmanibots"),
     ],
     [
         InlineKeyboardButton(
-            text="➕ TAMBAHKAN ➕", url="t.me/elsamanagerbot?startgroup=true"
+            text="➕ Add Osmani ChatBot To Group ➕", url="t.me/RibLentBot?startgroup=true"
         ),
     ],
 ]
 
 
 HELP_STRINGS = f"""
-*Komen Utama :* [🤖](https://telegra.ph/file/f973d5a6d4d91f6ca5aa3.jpg)
-HEY NGAB! GUA GUA PUNYA BANYAK MODULE NIH, COBA LIAT KEBAWAH ADA PANDUANNYA KAN? NAH COBAIN AJA YA.
-✪ /start: Memulai menggunakan saya.
-✪ /help: Klik ini akan memunculkan modul saya!
+*Faallooyinka ugu muhiimsan:*[💡](https://telegra.ph/file/68a54bd804d7b4a3c6f64.jpg)
+Ha Gaag! Halkaan Hoose Waxaan Ku Hayaa Mudulo Badan Hadaba Mid Mid U raac Waxa ee Qabtaana arag.
+✪ /start: Hada Bilaaw Dib U laabasho.
+✪ /help: Caawinaad Waxaa Dib u arkeysaa Qeybihii hada!
 ✪ /settings: 
-   ◔ di PM: akan mengirimkan setelan untuk semua modul yang didukung.
-   ◔ dalam grup: akan mengarahkan Kamu ke pm, dengan semua pengaturan chat.
+   ◔ PM: wuxuu u diri doonaa habayn dhammaan qaybaha la taageeray.
+   ◔ koox ahaan: waxay kuu hagaajin doontaa pm, oo leh dhammaan goobaha lagu sheekeysto.
 """.format(
     dispatcher.bot.first_name,
     "" if not ALLOW_EXCL else "\nUntuk dapat menggunakan semua modul gunakan / atau !.\n",
@@ -103,7 +102,7 @@ HEY NGAB! GUA GUA PUNYA BANYAK MODULE NIH, COBA LIAT KEBAWAH ADA PANDUANNYA KAN?
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
 You can donate to the original writer's of the Base code,
-Support them  [KENKAN](t.me/kenkanasw),[SEGAPUNG](t.me/Akusukakamubanget),"""
+Support them  [SUPPORT](t.me/osmanigroupbot),[UPDATE](t.me/osmanibots),"""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -362,17 +361,17 @@ def DaisyX_about_callback(update, context):
     query = update.callback_query
     if query.data == "aboutmanu_":
         query.message.edit_text(
-            text=f"*😍 Hi kembali!  Nam saya {dispatcher.bot.first_name} 😍 \n\nSaya adalah bot yang di kelola @kenkanasw.* "
-            f"\n\n 🔥 Join [MUSIK KU GROUP](https://t.me/musikkugroup) Untuk tahu kabar terbaru dari {dispatcher.bot.first_name} 🔥"
-            f"\n\n Saya memiliki sistem yang dapat mengatasi member yang suka spam, kamu tinggal aktifkan anti spam di pengaturan saya."
-            f"\n\n👇 Kamu bisa klik di bawah untuk cara penggunaan 👇",
+            text=f"*😍 😍 Hi back! Magacaygu waa {dispatcher.bot.first_name} 😍 \n\nWaxaan ahay bot la maareeyey @ribajosmani.* "
+            f"\n\n 🔥 Join [OSMANI BOT](https://t.me/osmanigroupbot) Si aad u ogaato wararkii ugu dambeeyay ee {dispatcher.bot.first_name} 🔥"
+            f"\n\n Waxaan haystaa nidaam la macaamili kara xubnaha jecel spamka, kaliya waa inaad ka shaqeysiisaa spam anti spam ee goobahayga."
+            f"\n\n👇 Waxaad riixi kartaa hoos sida loo isticmaalo 👇",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="📑CARA PENGGUNAAN", callback_data="aboutmanu_howto"
+                            text="📑SIDA LOO ISTICMAALO", callback_data="aboutmanu_howto"
                         ),
                     ],
                     [
@@ -395,7 +394,7 @@ def DaisyX_about_callback(update, context):
     elif query.data == "aboutmanu_howto":
         query.message.edit_text(
             text=f"* ｢ BASIC HELP 」*"
-            f"\n\nYou Can get support {dispatcher.bot.first_name} by joining [MUSIK KU](https://t.me/musikkugroup).\n"
+            f"\n\nYou Can get support {dispatcher.bot.first_name} by joining [OSMANI BOT](https://t.me/osmanigroupbot).\n"
             f"",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
@@ -427,7 +426,7 @@ def DaisyX_about_callback(update, context):
     elif query.data == "aboutmanu_permis":
         query.message.edit_text(
             text=f"<b> ｢ Admin Permissions 」</b>"
-            f"\nUntuk menghindari perlambatan, {dispatcher.bot.first_name} menyimpan hak admin untuk setiap pengguna. Cache ini berlangsung sekitar 10 menit; ini dapat berubah di masa depan. Artinya, jika Anda mempromosikan pengguna secara manual (tanpa menggunakan perintah /promote), {dispatcher.bot.first_name} hanya akan mengetahuinya ~10 menit kemudian."
+            f"\nUntuk menghindari perlambatan, {dispatcher.bot.first_name} badbaadi xuquuqda maamulka isticmaale kasta. Kaydintani waxay socotaa ilaa 10 daqiiqo; tani way isbedeli kartaa mustaqbalka. Taasi waa, haddii aad kor ugu qaaddo isticmaalayaasha gacanta (adigoon isticmaalin carwada /promote), {dispatcher.bot.first_name} kaliya ayaa ogaan doona ~ 10 daqiiqo kadib."
             f"\n\nJika Anda ingin segera memperbaruinya, Anda dapat menggunakan perintah /admincache, yang akan memaksa {dispatcher.bot.first_name} untuk memeriksa lagi siapa adminnya dan izinnya"
             f"\n\nJika Anda mendapatkan pesan yang mengatakan::"
             f"\n<Code>Anda harus menjadi administrator obrolan ini untuk melakukan tindakan ini!</code>"
@@ -477,7 +476,7 @@ def DaisyX_about_callback(update, context):
             f"\n✪ If you need to ask anything about \n  this bot, Go @{SUPPORT_CHAT}."
             f"\n✪ If you asking nonsense in Support \n  Chat, you will get warned/banned."
             f"\n✪ All api's we used owned by originnal authors \n  Some api's we use Free version \n  Please don't overuse AI Chat."
-            f"\n✪ We don't Provide any support to forks,\n  So these terms and conditions not applied to forks \n  If you are using a fork of DaisyXBot we are not resposible for anything."
+            f"\n✪ We don't Provide any support to forks,\n  So these terms and conditions not applied to forks \n  If you are using a fork of Osmani Chatbot we are not resposible for anything."
             f"\n\nFor any kind of help, related to this bot, Join @{SUPPORT_CHAT}."
             f"\n\n<i>Terms & Conditions will be changed anytime</i>\n",
             parse_mode=ParseMode.HTML,
